@@ -103,13 +103,23 @@ Here is a specification for the todo list application:
 
 To get started, perform a **noun–verb analysis** of the specification as a team.
 
-1. Identify the important **nouns**.
-   - Which are candidate classes?
-   - Which are better represented as attributes (instance variables) of another class?
+1. Identify the important **nouns**. (Task, to-do list, storage)
+   - Which are candidate classes? Task, ToDoList, TaskInputView, ToDoListView, Storage
+   - Which are better represented as attributes (instance variables) of another class? 
+   Task: isCompleted, title, description, dueDate, priorityLevel
+   ToDoList: taskList
+   ToDoListView: taskInputBox, toDoListBox, filterChooser
+   Storage: toDoListLoader, toDoListSaver
 
-2. Identify the important **verb phrases**.
+2. Identify the important **verb phrases**. (Add, edit, delete, filter, sort, save, load, complete)
    - What responsibilities do they suggest?
+   Adding tasks, editing tasks, deleting tasks, filtering/sorting tasks, saving tasks, loading tasks, completing tasks
    - Which of your candidate classes should be responsible for each one?
+   Task: setIsCompleted, setTitle, setDescription, setDueDate, setPriorityLevel
+   ToDoList: addTask, editTask, deleteTask, filterTasks, sortTasks, completeTask
+   ToDoListView: display, update (can be multiple methods)
+   Storage: loadToDoList, saveToDoList
+   
 
 > Remember, not *every* noun and verb should necessarily become a class or method
 > in our design.
